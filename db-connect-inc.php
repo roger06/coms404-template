@@ -10,7 +10,7 @@ ini_set('display_errors', 1);
 
 
 //connect to db
-$db = new PDO('mysql:host=localhost; dbname=uni-system-large;','root','root');  // PC
+$db = new PDO('mysql:host=localhost; dbname=uni-system-large;','roger','roger');  // PC
 // TODO - add exception handling
  
 
