@@ -105,6 +105,13 @@ else $order = 'ASC';
                    
 
                     echo '</td><td>';
+
+
+                    echo '<a href="student.php?id='.$row['ID'].'">'.htmlentities($row['last_name']).' </a>';
+
+
+                    echo '</td><td>';
+
                     echo htmlentities($row['dept_name']); 
 
                     echo '</td></tr>';
