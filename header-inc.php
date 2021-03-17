@@ -12,7 +12,7 @@ if (!isset($pagetitle)) $pagetitle = "Bootstrap template for COMS404";
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
- 
+    <script src="https://kit.fontawesome.com/9ba66e2797.js" crossorigin="anonymous"></script>
     <!-- <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico"> -->
 
     <title><?php if (!isset($pagetitle)) echo $pagetitle;?> </title>

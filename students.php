@@ -12,6 +12,14 @@ $pagetitle = 'View students';
 
 require_once('header-inc.php'); 
 
+if (isset($_GET['orderby'])) $orderby = $_GET['orderby'];
+else $orderby = 'name';
+
+if (isset($_GET['limit'])) $limit = $_GET['limit'];
+else $limit = 10;
+
+if (isset($_GET['order'])) $order = $_GET['order'];
+else $order = 'ASC';
 
 
 
@@ -34,9 +42,16 @@ require_once('header-inc.php');
         <div class="card mb-4 box-shadow">
             <div class="card-header">
                 <h4 class="my-0 font-weight-normal">Students</h4>
-                <b>Order by:   
+                <b>Order by:
 
-                <a href="<?php echo $_SERVER['PHP_SELF'];?>?orderby=name">Name</a> ::   <a href="<?php echo $_SERVER['PHP_SELF'];?>?orderby=dept_name">Department</a>
+                    <a href="<?php echo $_SERVER['PHP_SELF'];?>?orderby=name">Name</a> :: 
+                    <a href="<?php echo $_SERVER['PHP_SELF'];?>?orderby=dept_name">Department</a>
+
+                    <a href="<?php echo $_SERVER['PHP_SELF'];?>?orderby=<?php echo $orderby;?>&order=ASC">  <i class="fas fa-sort-amount-down-alt" ></i></a>     
+                    
+                    <a href="<?php echo $_SERVER['PHP_SELF'];?>?orderby=<?php echo $orderby;?>&order=DESC">  <i class="fas fa-sort-amount-up-alt"></i></a>     
+ 
+
 
                 </b>
             </div>
@@ -44,42 +59,44 @@ require_once('header-inc.php');
             <div class="card-body">
 
 
-            <?php
+                <?php
 
-                if (isset($_GET['orderby'])) $orderby = $_GET['orderby'];
-                else $orderby = 'name';
+         
+            
+
+            // change to prep statement
+
+            $stmt = $db->prepare("SELECT * FROM student ORDER BY $orderby $order limit "  . $limit);
+         
+            // $stmt->bindParam(1, $orderby);
+         
+  
+            $stmt->execute();
+            
+            // debugging - dont' delete this until final version
+            $stmt->debugDumpParams();
+            $totalrows = $stmt->rowCount();
 
 
-                $query = "SELECT `student`.`ID`,
-                `student`.`name`,
-                `student`.`dept_name`,
-                `student`.`tot_cred`
-                FROM `uni-system-large`.`student` ORDER BY " . $orderby;
-                    
-
-                $stmt = $db->query($query);
-               
-                // $stmt->debugDumpParams();  // query display for debugging.
- 
+            // get all the rows for info 
+            // SELECT count(*) is another way...
+            $count = $db->prepare("SELECT name FROM student");
+            $count->execute();
+            $allrows = $count->rowCount();
+            // $count->debugDumpParams();
+                
             ?>
 
 
-                <h1 class="card-title uni-card-title">Total students <?php echo $stmt->rowCount();?></h1>
-
-                <!-- options as a list if required. -->
+                <h1 class="card-title uni-card-title">Total students <?php echo  $totalrows;?></h1>
 
                 <table class="table striped">
 
-                <?php
+                    <?php
 
                 while  ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
-                    // options
-                    /*
-                    PDO::FETCH_NUM
-                    PDO::FETCH_ASSOC
-                    */
-             
+                              
                     
                     echo '<tr><td>';
 
@@ -98,10 +115,10 @@ require_once('header-inc.php');
 
 
 ?>
-            </table>
+                </table>
 
-
-                <button type="button" class="btn btn-lg btn-block btn-outline-primary">See all students</button>
+                <a href="students.php?limit=9999999999"> <button type="button" class="btn btn-lg btn-block btn-outline-primary">See all students (<?php echo  $allrows;?>)</button></a>
+               
             </div>
         </div>
 
