@@ -1,19 +1,19 @@
 <?php 
 /**
- * get details for individual student 
+ * get details for individual course 
  */
 
 // include the header file
 
-$pagetitle = 'View students';  
+$pagetitle = 'Course';  
 // use this to pass a value to the <title> tag in the header file.
 
 require_once('header-inc.php'); 
 
-if (isset($_GET['id'])) $id = $_GET['id'];
+if (isset($_GET['course_id'])) $id = $_GET['course_id'];
 else {
     
-    echo 'no student id';
+    echo 'no course_id id';
     exit;
 
     // todo - redirect back to student list.
@@ -21,8 +21,8 @@ else {
 }
 
  
-$stmt = $db->prepare("SELECT * FROM student WHERE ID = :id ");
-$stmt->bindparam(":id", $id);
+$stmt = $db->prepare("SELECT * FROM course WHERE course_id = :course_id ");
+$stmt->bindparam(":course_id", $id);
          
 $stmt->execute();
 
@@ -31,7 +31,7 @@ $stmt->execute();
 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-$fullname =   htmlentities($row['name']) . ' ' . htmlentities($row['last_name']) ;
+$coursename =   htmlentities($row['title']);
 
  
 
@@ -44,9 +44,9 @@ $fullname =   htmlentities($row['name']) . ' ' . htmlentities($row['last_name'])
 
 <div class="pricing-header px-3 pb-md-4  text-left">
 
-    <h1 class="display-4">View Student Details</h1>
+    <h1 class="display-4">View Course Details</h1>
     <!-- intro text -->
-    <p class="lead">View details for an individual student.</p>
+    <p class="lead">View details for an individual course.</p>
 </div>
  
 
@@ -58,14 +58,13 @@ $fullname =   htmlentities($row['name']) . ' ' . htmlentities($row['last_name'])
         <!-- card one -->
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Student <?php echo  $fullname;?></h4>
+                <h4 class="my-0 font-weight-normal">Course <?php echo  $coursename;?></h4>
             </div>
             <div class="card-body">
 
                 <!-- <h1 class="card-title uni-card-title">Total students xxx </h1> -->
             <h4>Department: <?php echo  $row['dept_name'];?></h4>
-            <h4>Total credit: <?php echo  $row['tot_cred'];?></h4>
-
+           
           
 
         <?php
@@ -86,7 +85,7 @@ $fullname =   htmlentities($row['name']) . ' ' . htmlentities($row['last_name'])
                   
 
             ?>  
-            <h3>Modules (<?php echo $totalrows;?>)</h3>
+            <h3>Students enrolled (<?php echo $totalrows;?>)</h3>
             <table class="table table-striped"> 
 
             <?php
@@ -95,7 +94,7 @@ $fullname =   htmlentities($row['name']) . ' ' . htmlentities($row['last_name'])
 
                 echo '<tr><td>';
 
-                echo ' <a href="course.php?course_id='.$row['course_id'].'">';
+                echo ' <a href="courses.php?course_id='.$row['course_id'].'">';
 
                 echo $row['title'];
 
