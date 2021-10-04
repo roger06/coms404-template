@@ -8,9 +8,9 @@ require_once('header-inc.php');
 
 <div class="pricing-header px-3 pb-md-4  text-left">
 
-    <h1 class="display-4">University database</h1>
+    <h1 class="display-4">Web template</h1>
     <!-- intro text -->
-    <p class="lead">This system allows management of courses, modules, students etc.</p>
+    <p class="lead">This system allows ....</p>
 </div>
 
 
@@ -20,11 +20,11 @@ require_once('header-inc.php');
         <!-- card one -->
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Students</h4>
+                <h4 class="my-0 font-weight-normal">Entity 1</h4>
             </div>
             <div class="card-body">
 
-                <h1 class="card-title uni-card-title">Total students xxx </h1>
+                <h1 class="card-title uni-card-title">xxx </h1>
 
                 <!-- options as a list if required. -->
                 <!-- <ul class="list-unstyled mt-3 mb-4">
@@ -43,11 +43,11 @@ require_once('header-inc.php');
 
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Tutors</h4>
+                <h4 class="my-0 font-weight-normal">Entity 2</h4>
             </div>
             <div class="card-body">
 
-                <h1 class="card-title uni-card-title">Total tutors = xxx</h1>
+                <h1 class="card-title uni-card-title">xxx</h1>
                 <!--            
             <ul class="list-unstyled mt-3 mb-4">
               <li>20 users included</li>
@@ -55,7 +55,7 @@ require_once('header-inc.php');
               <li>Priority email support</li>
               <li>Help center access</li>
             </ul> -->
-                <button type="button" class="btn btn-lg btn-block btn-primary">All tutors</button>
+                <button type="button" class="btn btn-lg btn-block btn-primary">All ...</button>
             </div>
         </div>
 
@@ -63,13 +63,13 @@ require_once('header-inc.php');
 
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Courses</h4>
+                <h4 class="my-0 font-weight-normal">Entity 3</h4>
             </div>
 
 
 
             <div class="card-body">
-                <h1 class="card-title uni-card-title">Total courses = </h1>
+                <h1 class="card-title uni-card-title">xxx</h1>
                 <!-- <ul class="list-unstyled mt-3 mb-4">
             <li>30 users included</li>
             <li>15 GB of storage</li>
@@ -82,13 +82,13 @@ require_once('header-inc.php');
 
         <div class="card mb-4 box-shadow">
             <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Courses</h4>
+                <h4 class="my-0 font-weight-normal">Other</h4>
             </div>
 
 
 
             <div class="card-body">
-                <h1 class="card-title uni-card-title">Modules</h1>
+                <h1 class="card-title uni-card-title">other</h1>
                 <!-- <ul class="list-unstyled mt-3 mb-4">
             <li>30 users included</li>
             <li>15 GB of storage</li>

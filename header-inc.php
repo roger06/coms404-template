@@ -3,7 +3,7 @@
 // include database connection script
 require_once('db-connect-inc.php');
 
-if (!isset($pagetitle)) $pagetitle = "Bootstrap template for COMS404";
+if (!isset($pagetitle)) $pagetitle = "Bootstrap template for MSCDSA10";
 ?>
 
 
@@ -32,7 +32,7 @@ if (!isset($pagetitle)) $pagetitle = "Bootstrap template for COMS404";
   <body>
 
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-      <h5 class="my-0 mr-md-auto font-weight-normal">COMS404 Database Systems</h5>
+      <h5 class="my-0 mr-md-auto font-weight-normal">MSCDSA10 Database Systems</h5>
       <nav class="my-2 my-md-0 mr-md-3">
         <!-- main nav links, change these to what you need -->
         <a class="p-2 text-dark" href="students.php">Students</a>
