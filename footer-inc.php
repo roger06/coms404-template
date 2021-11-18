@@ -1,3 +1,6 @@
+<!-- this is an 'include file' that is included in each page -->
+<!-- you may wish to edit of remove some of the links. -->
+
 <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
             <div class="col-12 col-md">
@@ -49,20 +52,6 @@
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
 </script>
 
-
-
-
-
-
-
-
-<!-- <script>
-      Holder.addTheme('thumb', {
-        bg: '#55595c',
-        fg: '#eceeef',
-        text: 'Thumbnail'
-      });
-    </script> -->
 </body>
 
 </html>

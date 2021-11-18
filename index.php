@@ -1,4 +1,10 @@
+<!-- make a copy (Save as...) of this file to create a new file -->
+<!-- such as student_details.php or modules.php etc -->
+
 <?php 
+// include database connection script
+require_once('db-connect-inc.php');
+
 // include the header file
 require_once('header-inc.php'); 
 

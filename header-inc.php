@@ -1,7 +1,8 @@
+<!-- this is an 'include file' that is included in each page -->
+<!-- you may wish to edit of remove some of the links on the top navigation. -->
+
 <?php
 
-// include database connection script
-require_once('db-connect-inc.php');
 
 if (!isset($pagetitle)) $pagetitle = "Bootstrap template for COMS404";
 ?>
@@ -15,7 +16,7 @@ if (!isset($pagetitle)) $pagetitle = "Bootstrap template for COMS404";
  
     <!-- <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico"> -->
 
-    <title><?php if (!isset($pagetitle)) echo $pagetitle;?> </title>
+    <title><?php if (isset($pagetitle)) echo $pagetitle;?> </title>
 
     
 

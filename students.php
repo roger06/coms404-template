@@ -4,6 +4,8 @@
  * it includes header and footer files so create 
  * a new 'body' page by duplicating this.
  */
+// include database connection script
+require_once('db-connect-inc.php');
 
 // include the header file
 
