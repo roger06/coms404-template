@@ -8,7 +8,7 @@
             <div class="col-6 col-md">
                 <h5>Footer Links</h5>
                 <ul class="list-unstyled text-small">
-                    <li><a class="text-muted" href="#">Link</a></li>
+                    <li><a class="text-muted" href="#">edited on master</a></li>
                     <li><a class="text-muted" href="#">Link</a></li>
                     <li><a class="text-muted" href="#">Link</a></li>
 
